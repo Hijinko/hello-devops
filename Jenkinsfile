@@ -4,7 +4,7 @@ pipeline {
 
 	stage('Clone repository'){
 		steps {
-			checkout scm
+		 git 'https://github.com/Hijinko/hello-devops.git'
 		}
 	}
 
