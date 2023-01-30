@@ -4,12 +4,8 @@ node {
 		checkout scm
 	}
 
-	stage('List Directory') {
-		sh 'ls -la .'
-	}
-
 	stage('Build image') {
-		app = docker.build("raj80dockerid/test")
+		app = docker.build("")
 	}
 
 	stage('Test image') {
