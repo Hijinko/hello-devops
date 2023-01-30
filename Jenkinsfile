@@ -1,19 +1,7 @@
-pipeline {
-    agent any
-    stages {
+node {
+    checkout scm
 
-	stage('Clone repository'){
-		steps {
-		 git 'https://github.com/Hijinko/hello-devops.git'
-		}
-	}
-
-        stage('Build Docker Image') {
-            steps {
-                docker.withDockerServer('mydockerhost') {
-                    sh 'docker build -t myimage .'
-                }
-            }
-        }
+    docker.withServer(''tcp://10.233.102.187:2376, 'dind') {
+	def app = docker.build('hello docker')
     }
 }
