@@ -5,7 +5,9 @@ node {
 	}
 
 	stage('Build image') {
-		app = docker.build 'hello-gitops:latest'
+		docker.withDockerServer('docker') {
+			app = docker.build 'hello-gitops:latest'
+		}
 	}
 
 	stage('Test image') {
