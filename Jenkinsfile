@@ -5,9 +5,7 @@ node {
 	}
 
 	stage('List Directory') {
-		app.inside {
-			sh 'ls -la'
-		}
+		ls -la
 	}
 
 	stage('Build image') {
