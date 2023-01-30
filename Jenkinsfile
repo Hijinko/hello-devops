@@ -5,7 +5,7 @@ node {
 	}
 
 	stage('List Directory') {
-		ls -la
+		sh 'ls -la .'
 	}
 
 	stage('Build image') {
