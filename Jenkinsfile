@@ -5,7 +5,7 @@ node {
 	}
 
 	stage('Build image') {
-		app = docker.build("hello-devops")
+		app = docker.build("raj80dockerid/test")
 	}
 
 	stage('Test image') {
